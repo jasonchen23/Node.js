@@ -27,8 +27,8 @@ const updateRepo = async () => {
   const timer = new Timer();
 
   const promises = [...info].map(async (info) => {
-    const o = new Object({name: info.owner, reponame: info.repo});
-    const repoDetails = await updateRepoAPI(o.name,o.reponame);
+    // const o = new Object({name: info.owner, reponame: info.repo});
+    const repoDetails = await updateRepoAPI(info.owner,info.repo);
 
     return repoDetails.json();
   });
